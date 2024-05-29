@@ -358,7 +358,7 @@
         "headers-polyfill": "3.2.5",
         "html-webpack-plugin": "^5.5.0",
         "jest-canvas-mock": "^2.3.1",
-        "jest-environment-jsdom": "^29.7.0",
+        "jest-environment-jsdom": "27.5.1",
         "jest-junit": "^16.0.0",
         "jest-runner-eslint": "^2.2.0",
         "jest-transform-graphql": "^2.1.0",
