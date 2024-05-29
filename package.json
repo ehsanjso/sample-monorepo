@@ -64,8 +64,6 @@
         "@sentry/fullstory": "2.0.0",
         "@sentry/react": "7.73.0",
         "@slack/web-api": "^6.8.1",
-        "@stackadapt/halo-ui": "^3.13.1",
-        "@stackadapt/halo-ui-icons": "^2.2.2",
         "@stripe/react-stripe-js": "^1.16.5",
         "@tanstack/react-query": "^4.24.4",
         "@thoughtspot/visual-embed-sdk": "1.21.1",
@@ -412,8 +410,7 @@
         "json-schema": "^0.4.0",
         "@mui/material": "5.13.5",
         "@mui/styles": "5.5.1",
-        "@mui/system": "5.13.5",
-        "@react-hook/latest": "https://artifactory.stackadapt.dev/artifactory/api/npm/npm/@react-hook/latest/-/latest-1.0.3.tgz"
+        "@mui/system": "5.13.5"
     },
     "husky": {
         "hooks": {
