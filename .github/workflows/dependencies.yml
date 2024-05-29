@@ -22,8 +22,6 @@ jobs:
                   run_install: |
                       args: [--frozen-lockfile]
             - uses: actions/setup-node@v4
-              with:
-                  cache: 'pnpm'
             - name: Update Dependencies
               run: |
                   npx npm-check-updates --upgrade --packageFile package.json
