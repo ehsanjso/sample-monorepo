@@ -4,35 +4,33 @@
 name: Node.js Package
 
 on:
-  workflow_dispatch: {}
+    workflow_dispatch: {}
 
 jobs:
-  publish-gpr:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - name: checkout code repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          ref: main
-      - uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 6.32.10
-          run_install: |
-            args: [--frozen-lockfile]
-      # The following step creates a .npmrc file on the runner with following contents:
-      # //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
-      # registry=https://npm.pkg.github.com/
-      # always-auth=true
-      - name: Use Node.js 14
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14
-          registry-url: 'https://npm.pkg.github.com'
-          cache: 'pnpm'
-      - run: pnpm ci:publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    publish-gpr:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            packages: write
+        steps:
+            - name: checkout code repository
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+                  ref: main
+            - uses: pnpm/action-setup@v4
+              with:
+                  run_install: |
+                      args: [--frozen-lockfile]
+            # The following step creates a .npmrc file on the runner with following contents:
+            # //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+            # registry=https://npm.pkg.github.com/
+            # always-auth=true
+            - name: Use Node.js
+              uses: actions/setup-node@v4
+              with:
+                  registry-url: 'https://npm.pkg.github.com'
+                  cache: 'pnpm'
+            - run: pnpm ci:publish
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

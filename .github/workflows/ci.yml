@@ -1,105 +1,97 @@
 name: CI
 
 env:
-  pnpm_store_path: ${{github.workspace}}/.pnpm-store
-  NX_BRANCH: ${{ github.event.number }}
-  NX_RUN_GROUP: ${{ github.run_id }}
+    pnpm_store_path: ${{github.workspace}}/.pnpm-store
+    NX_BRANCH: ${{ github.event.number }}
+    NX_RUN_GROUP: ${{ github.run_id }}
 
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
-  push:
-    branches: [main]
-    paths-ignore:
-      - 'README.md'
-  workflow_dispatch: {}
+    pull_request:
+        types:
+            - opened
+            - synchronize
+    push:
+        branches: [main]
+        paths-ignore:
+            - 'README.md'
+    workflow_dispatch: {}
 
 jobs:
-  pnpmstore:
-    if: "!contains(github.event.head_commit.message, '[release skip]')"
-    runs-on: ubuntu-latest
+    pnpmstore:
+        if: "!contains(github.event.head_commit.message, '[release skip]')"
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: checkout code repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 6.32.10
-          run_install: |
-            args: [--frozen-lockfile]
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 14
-          cache: 'pnpm'
-      - name: check pnpm store
-        run: pnpm store status
+        steps:
+            - name: checkout code repository
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+            - uses: pnpm/action-setup@v4
+              with:
+                  run_install: |
+                      args: [--frozen-lockfile]
+            - uses: actions/setup-node@v4
+              with:
+                  cache: 'pnpm'
+            - name: check pnpm store
+              run: pnpm store status
 
-  lint:
-    needs: pnpmstore
+    lint:
+        needs: pnpmstore
 
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout code repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 6.32.10
-          run_install: |
-            args: [--frozen-lockfile]
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 14
-          cache: 'pnpm'
-      - name: build
-        run: pnpm run ci:build
-      - name: lint
-        run: pnpm lint
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout code repository
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+            - uses: pnpm/action-setup@v4
+              with:
+                  run_install: |
+                      args: [--frozen-lockfile]
+            - uses: actions/setup-node@v4
+              with:
+                  cache: 'pnpm'
+            - name: build
+              run: pnpm run ci:build
+            - name: lint
+              run: pnpm lint
 
-  test:
-    needs: pnpmstore
+    test:
+        needs: pnpmstore
 
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout code repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 6.32.10
-          run_install: |
-            args: [--frozen-lockfile]
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 14
-          cache: 'pnpm'
-      - name: Install and run test
-        run: |
-          pnpm install
-          pnpm test
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout code repository
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+            - uses: pnpm/action-setup@v4
+              with:
+                  run_install: |
+                      args: [--frozen-lockfile]
+            - uses: actions/setup-node@v4
+              with:
+                  cache: 'pnpm'
+            - name: Install and run test
+              run: |
+                  pnpm install
+                  pnpm test
 
-  build:
-    needs: pnpmstore
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout code repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 6.32.10
-          run_install: |
-            args: [--frozen-lockfile]
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 14
-          cache: 'pnpm'
-      - name: build
-        run: pnpm run build
+    build:
+        needs: pnpmstore
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout code repository
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+            - uses: pnpm/action-setup@v4
+              with:
+                  run_install: |
+                      args: [--frozen-lockfile]
+            - uses: actions/setup-node@v4
+              with:
+                  cache: 'pnpm'
+            - name: build
+              run: pnpm run build
