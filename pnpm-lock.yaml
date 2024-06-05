@@ -326,8 +326,8 @@ dependencies:
     specifier: ^2.2.0
     version: 2.2.0(immutable@3.8.2)
   react-infinite-scroll-component:
-    specifier: ^5.1.0
-    version: 5.1.0(react@18.2.0)
+    specifier: ^6.1.0
+    version: 6.1.0(react@18.2.0)
   react-map-gl:
     specifier: ^7.1.7
     version: 7.1.7(mapbox-gl@3.4.0)(react-dom@18.2.0)(react@18.2.0)
@@ -26403,8 +26403,8 @@ packages:
       invariant: 2.2.4
     dev: false
 
-  /react-infinite-scroll-component@5.1.0(react@18.2.0):
-    resolution: {integrity: sha512-ZQ7lYlLByil1ZVdvt57UJeBIj/tSOwKyds+B0LIm/xGmxzJJZwW/hYGKKs74sHO3LoIDwcq2ci6YXqrkWSalLQ==}
+  /react-infinite-scroll-component@6.1.0(react@18.2.0):
+    resolution: {integrity: sha512-SQu5nCqy8DxQWpnUVLx7V7b7LcA37aM7tvoWjTLZp1dk6EJibM5/4EJKzOnl07/BsM1Y40sKLuqjCwwH/xV0TQ==}
     peerDependencies:
       react: 18.2.0
     dependencies:
