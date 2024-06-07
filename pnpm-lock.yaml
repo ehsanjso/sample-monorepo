@@ -703,8 +703,8 @@ devDependencies:
     specifier: ^9.0.4
     version: 9.0.4
   '@types/pluralize':
-    specifier: ^0.0.29
-    version: 0.0.29
+    specifier: ^0.0.33
+    version: 0.0.33
   '@types/prettier':
     specifier: ^2.7.3
     version: 2.7.3
@@ -12218,8 +12218,8 @@ packages:
     resolution: {integrity: sha512-Wr8bZ53IVjFWMLRsWEiGCfCDWoKORczxC04+XlvQrhn0tF3qDMQoLFHPPzZBcCi2uu5D6+alfrvidpTthFwKbw==}
     dev: true
 
-  /@types/pluralize@0.0.29:
-    resolution: {integrity: sha512-BYOID+l2Aco2nBik+iYS4SZX0Lf20KPILP5RGmM1IgzdwNdTs0eebiFriOPcej1sX9mLnSoiNte5zcFxssgpGA==}
+  /@types/pluralize@0.0.33:
+    resolution: {integrity: sha512-JOqsl+ZoCpP4e8TDke9W79FDcSgPAR0l6pixx2JHkhnRjvShyYiAYw2LVsnA7K08Y6DeOnaU6ujmENO4os/cYg==}
     dev: true
 
   /@types/prettier@2.7.3:
