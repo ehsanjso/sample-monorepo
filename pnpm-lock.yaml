@@ -119,8 +119,8 @@ dependencies:
     specifier: ^6.2.0
     version: 6.5.0
   d3-hierarchy:
-    specifier: ^2.0.0
-    version: 2.0.0
+    specifier: ^3.1.2
+    version: 3.1.2
   dayjs:
     specifier: ^1.11.10
     version: 1.11.11
@@ -640,8 +640,8 @@ devDependencies:
     specifier: ^3.1.0
     version: 3.1.0
   '@types/d3-hierarchy':
-    specifier: ^2.0.1
-    version: 2.0.5
+    specifier: ^3.1.7
+    version: 3.1.7
   '@types/deep-freeze':
     specifier: ^0.1.2
     version: 0.1.5
@@ -11881,8 +11881,8 @@ packages:
       csv-stringify: 6.5.0
     dev: true
 
-  /@types/d3-hierarchy@2.0.5:
-    resolution: {integrity: sha512-t/xXqB6MXT6Hp0BgFV00ZonpZbs9fUtYPM3QzqOlmghefovpnnxEN7mAdUqE/mNinRI/eR8gewDAobFJA0TNBw==}
+  /@types/d3-hierarchy@3.1.7:
+    resolution: {integrity: sha512-tJFtNoYBtRtkNysX1Xq4sxtjK8YgoWUNpIiUee0/jHGRwqvzYxkq0hGVbbOGSz+JgFxxRu4K8nb3YpG3CMARtg==}
     dev: true
 
   /@types/debug@4.1.12:
@@ -16285,8 +16285,9 @@ packages:
       d3-array: 3.2.4
     dev: false
 
-  /d3-hierarchy@2.0.0:
-    resolution: {integrity: sha512-SwIdqM3HxQX2214EG9GTjgmCc/mbSx4mQBn+DuEETubhOw6/U3fmnji4uCVrmzOydMHSO1nZle5gh6HB/wdOzw==}
+  /d3-hierarchy@3.1.2:
+    resolution: {integrity: sha512-FX/9frcub54beBdugHjDCdikxThEqjnR93Qt7PvQTOHxyiNCAlvMrHhclk3cD5VeAaq9fxmfRp+CnWw9rEMBuA==}
+    engines: {node: '>=12'}
     dev: false
 
   /d3-interpolate@3.0.1:
